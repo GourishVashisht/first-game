@@ -1,7 +1,4 @@
-const path = require('path');
-const webpack = require('webpack');
-
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -9,13 +6,13 @@ module.exports = {
     index: './first-game.main.ts'
   },
   plugins: [
-    new CleanWebpackPlugin()
-    // new HtmlWebpackPlugin({
-    //   title: 'TDD Challenge',
-    //   meta: {
-    //     viewport: 'width=device-width, initial-scale=1'
-    //   }
-    // })
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'TDD Challenge',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1'
+      }
+    })
   ],
   module: {
     rules: [
